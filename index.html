@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- 
+  QUESTO È UN FILE HTML: definisce la STRUTTURA della pagina (testi, immagini, link).
+  Lo stile (colori, font, spaziature) è tutto separato, nel file style.css.
+  Tenere struttura e stile separati è una buona pratica: se domani vuoi cambiare
+  i colori del sito, tocchi solo il CSS, non l'HTML.
+-->
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <!-- Questo meta tag rende il sito leggibile bene anche su cellulare -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forno Lievita — Pasticceria artigianale</title>
+  <!-- Colleghiamo il foglio di stile: stesso file per tutte e 3 le pagine -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER: la parte in cima, uguale su tutte le pagine -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo">Forno Lievita</a>
+      <nav class="nav">
+        <a href="index.html" class="nav-active">Home</a>
+        <a href="chi-siamo.html">Chi siamo</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO: la prima cosa grande che si vede aprendo il sito -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <p class="hero-kicker">Aperti dal 1987, a Bergamo</p>
+        <h1>Il pane si aspetta.<br>Non si affretta.</h1>
+        <p class="hero-lead">
+          Lievito madre, farine macinate a pietra e una lievitazione lenta
+          di 24 ore. Ogni mattina, prima dell'alba, per un pane che sa
+          ancora di pane.
+        </p>
+        <a href="contatti.html" class="button">Vieni a trovarci</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <!-- Una piccola illustrazione SVG fatta a mano, non una foto stock -->
+        <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="120" cy="150" rx="95" ry="55" fill="#DCA047"/>
+          <path d="M25 150 Q120 60 215 150 Q120 210 25 150 Z" fill="#E8B968"/>
+          <path d="M70 120 Q120 90 170 120" stroke="#A63446" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M60 140 Q120 108 180 140" stroke="#A63446" stroke-width="4" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE CON 3 BLOCCHI (le "card") -->
+  <section class="features">
+    <div class="wrap">
+      <div class="feature-grid">
+        <div class="feature">
+          <h3>Lievito madre</h3>
+          <p>Rinnovato ogni giorno da oltre trent'anni, dà al pane la sua acidità gentile.</p>
+        </div>
+        <div class="feature">
+          <h3>Farine locali</h3>
+          <p>Grani antichi macinati a pietra da un mulino a 20 km dal forno.</p>
+        </div>
+        <div class="feature">
+          <h3>Cottura a legna</h3>
+          <p>Forno a legna acceso alle quattro del mattino, ogni giorno dell'anno.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER: la parte in fondo, uguale su tutte le pagine -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; 2026 Forno Lievita — Via dei Mille 12, Bergamo</p>
+    </div>
+  </footer>
+
+</body>
+</html>

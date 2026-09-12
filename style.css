@@ -1,0 +1,286 @@
+/* ============================================
+   FILE CSS: qui viviamo colori, font, spazi.
+   Ogni "regola" ha questa forma:
+     selettore { proprietà: valore; }
+   Il selettore dice A CHI si applica lo stile (es. tutti i <h1>,
+   o tutti gli elementi con class="button").
+   ============================================ */
+
+/* --- Variabili di colore/font, usate in tutto il file --- */
+:root {
+  --colore-sfondo: #FBF7F0;   /* bianco caldo, quasi farina */
+  --colore-testo:  #2B2320;   /* bruno scuro, quasi crosta */
+  --colore-accento: #A63446;  /* rosso confettura */
+  --colore-oro:    #DCA047;   /* giallo crosta */
+  --colore-muto:   #8C7B6B;   /* bruno tenue per testi secondari */
+  --colore-bordo:  #E5DCCB;
+
+  --font-titoli: "Lora", Georgia, serif;
+  --font-testo:  "Karla", Arial, sans-serif;
+}
+
+/* Font da Google Fonts: due famiglie, chiaramente diverse tra loro */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Karla:wght@400;500;700&display=swap');
+
+/* --- Reset di base: azzera margini/padding che i browser
+   impostano di default in modo incoerente --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--colore-sfondo);
+  color: var(--colore-testo);
+  font-family: var(--font-testo);
+  line-height: 1.6;
+}
+
+/* --- Contenitore: mantiene il contenuto centrato e non troppo largo --- */
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.wrap-narrow {
+  max-width: 680px;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-titoli);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+h1 { font-size: clamp(2rem, 4vw, 3rem); }
+h2 { font-size: 1.4rem; margin-top: 2rem; margin-bottom: 0.75rem; }
+h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+
+p { color: var(--colore-testo); }
+
+a {
+  color: var(--colore-accento);
+  text-decoration: none;
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  border-bottom: 1px solid var(--colore-bordo);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.logo {
+  font-family: var(--font-titoli);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--colore-testo);
+}
+
+.nav a {
+  color: var(--colore-muto);
+  margin-left: 28px;
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav a:hover,
+.nav a.nav-active {
+  color: var(--colore-testo);
+  border-bottom-color: var(--colore-accento);
+}
+
+/* ===== HERO (solo home) ===== */
+.hero {
+  padding: 72px 0;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.hero-text {
+  flex: 1.2;
+}
+
+.hero-kicker {
+  color: var(--colore-accento);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  margin-bottom: 20px;
+}
+
+.hero-lead {
+  max-width: 480px;
+  color: var(--colore-muto);
+  font-size: 1.05rem;
+  margin-bottom: 28px;
+}
+
+.hero-art {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-art svg {
+  width: 100%;
+  max-width: 280px;
+}
+
+/* Bottone pieno usato nella hero e nel form */
+.button {
+  display: inline-block;
+  background: var(--colore-accento);
+  color: #FBF7F0;
+  padding: 12px 26px;
+  border-radius: 4px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-testo);
+  font-size: 1rem;
+}
+
+.button:hover {
+  background: #8C2938;
+}
+
+/* ===== FEATURES (le 3 card della home) ===== */
+.features {
+  padding-bottom: 80px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.feature {
+  border-top: 3px solid var(--colore-oro);
+  padding-top: 16px;
+}
+
+.feature p {
+  color: var(--colore-muto);
+}
+
+/* ===== Intestazione di pagina interna (Chi siamo / Contatti) ===== */
+.page-header {
+  padding: 56px 0 8px;
+}
+
+.content {
+  padding: 24px 0 80px;
+}
+
+.content p {
+  margin-bottom: 16px;
+}
+
+/* Lista orari: nome giorno a sinistra, orario a destra */
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--colore-bordo);
+}
+
+.hours-list span:first-child {
+  font-weight: 700;
+}
+
+.hours-list span:last-child {
+  color: var(--colore-muto);
+}
+
+/* ===== Pagina contatti ===== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  font-weight: 700;
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1px solid var(--colore-bordo);
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-family: var(--font-testo);
+  font-size: 1rem;
+  background: white;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--colore-accento);
+  outline-offset: 1px;
+}
+
+.contact-form button {
+  margin-top: 24px;
+  align-self: flex-start;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  border-top: 1px solid var(--colore-bordo);
+  padding: 24px 0;
+}
+
+.site-footer p {
+  color: var(--colore-muto);
+  font-size: 0.9rem;
+}
+
+/* ===== Adattamento per schermi piccoli (cellulare) ===== */
+@media (max-width: 720px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav a {
+    margin-left: 16px;
+  }
+}
