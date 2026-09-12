@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forno Lievita — Домашня пекарня</title>
+  <!-- Siamo dentro la cartella uk/, quindi risaliamo di un livello con ../ -->
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo">Forno Lievita</a>
+      <nav class="nav">
+        <a href="index.html" class="nav-active">Головна</a>
+        <a href="chi-siamo.html">Про нас</a>
+        <a href="contatti.html">Контакти</a>
+        <!-- Link per tornare alla versione italiana: salviamo la scelta
+             in localStorage così il sito non ci "riporta" più qui in automatico -->
+        <a href="../index.html" class="lang-switch" onclick="localStorage.setItem('lingua-preferita','it')">IT</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <p class="hero-kicker">Працюємо з 1987 року, у Бергамо</p>
+        <h1>Хліб чекають.<br>Не поспішають.</h1>
+        <p class="hero-lead">
+          Заквасне тісто, борошно кам'яного помелу та повільне 24-годинне
+          вистоювання. Щоранку, ще до світанку, заради хліба, який досі
+          має смак хліба.
+        </p>
+        <a href="contatti.html" class="button">Завітайте до нас</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="120" cy="150" rx="95" ry="55" fill="#DCA047"/>
+          <path d="M25 150 Q120 60 215 150 Q120 210 25 150 Z" fill="#E8B968"/>
+          <path d="M70 120 Q120 90 170 120" stroke="#A63446" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M60 140 Q120 108 180 140" stroke="#A63446" stroke-width="4" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <div class="feature-grid">
+        <div class="feature">
+          <h3>Заквасне тісто</h3>
+          <p>Оновлюється щодня вже понад тридцять років і надає хлібу делікатну кислинку.</p>
+        </div>
+        <div class="feature">
+          <h3>Місцеве борошно</h3>
+          <p>Стародавні сорти пшениці, змелені на кам'яному млині за 20 км від пекарні.</p>
+        </div>
+        <div class="feature">
+          <h3>Випікання на дровах</h3>
+          <p>Дров'яна піч, яку розпалюють о четвертій ранку щодня, цілий рік.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; 2026 Forno Lievita — Via dei Mille 12, Бергамо</p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -13,6 +13,24 @@
   <title>Forno Lievita — Pasticceria artigianale</title>
   <!-- Colleghiamo il foglio di stile: stesso file per tutte e 3 le pagine -->
   <link rel="stylesheet" href="style.css">
+  <!-- 
+    RILEVAMENTO LINGUA: questo script gira PRIMA che la pagina venga disegnata
+    (per questo sta nel <head>), così se serve un redirect avviene subito,
+    senza far vedere per un attimo la pagina italiana a chi legge ucraino.
+    - localStorage è una piccola "memoria" del browser: ci salviamo la scelta
+      dell'utente, così se ha scelto IT manualmente non lo rimandiamo più su UK.
+    - navigator.language ci dice la lingua impostata nel browser dell'utente.
+  -->
+  <script>
+    (function () {
+      var scelta = localStorage.getItem('lingua-preferita');
+      if (scelta) return; // l'utente ha già scelto una lingua in passato, rispettiamola
+      var lingua = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      if (lingua.indexOf('uk') === 0) {
+        window.location.replace('uk/index.html');
+      }
+    })();
+  </script>
 </head>
 <body>
 
@@ -24,6 +42,8 @@
         <a href="index.html" class="nav-active">Home</a>
         <a href="chi-siamo.html">Chi siamo</a>
         <a href="contatti.html">Contatti</a>
+        <!-- Selettore manuale: salviamo la scelta così il rilevamento automatico non la ignora -->
+        <a href="uk/index.html" class="lang-switch" onclick="localStorage.setItem('lingua-preferita','uk')">UA</a>
       </nav>
     </div>
   </header>

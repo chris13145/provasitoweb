@@ -10,7 +10,7 @@
 :root {
   --colore-sfondo: #FBF7F0;   /* bianco caldo, quasi farina */
   --colore-testo:  #2B2320;   /* bruno scuro, quasi crosta */
-  --colore-accento: #1D4E89;  /* rosso confettura */
+  --colore-accento: #A63446;  /* rosso confettura */
   --colore-oro:    #DCA047;   /* giallo crosta */
   --colore-muto:   #8C7B6B;   /* bruno tenue per testi secondari */
   --colore-bordo:  #E5DCCB;
@@ -97,6 +97,20 @@ a {
 .nav a.nav-active {
   color: var(--colore-testo);
   border-bottom-color: var(--colore-accento);
+}
+
+/* Selettore di lingua: leggermente staccato dagli altri link, come un piccolo badge */
+.nav a.lang-switch {
+  margin-left: 24px;
+  padding: 2px 10px;
+  border: 1px solid var(--colore-bordo);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.nav a.lang-switch:hover {
+  border-color: var(--colore-accento);
 }
 
 /* ===== HERO (solo home) ===== */
